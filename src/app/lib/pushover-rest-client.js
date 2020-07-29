@@ -268,14 +268,9 @@ OpenClient.prototype.fetchNotifications = function(optionsOverride, callback) {
 		}
 
 		var messageUrl = options.apiBaseURL + options.apiNamespace + 'messages.json'
-		var urlData = {
-			secret: options.secret,
-			device_id: options.deviceId
-		}
 
 		request.get({
-			url: messageUrl,
-			form: urlData
+			url: messageUrl + "?secret=" + options.secret + "&device_id=" + options.deviceId
 		}, function(err, httpResponse, body) {
 			if (err) {
 				var errorDesc = 'Fetch notification request failed'
