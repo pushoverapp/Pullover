@@ -2,7 +2,7 @@ import { hashHistory } from 'react-router'
 import { createStore, applyMiddleware } from 'redux'
 import { routerMiddleware } from 'react-router-redux'
 
-import reducer from '../reducers/Index'
+import reducer from '../reducers/index'
 
 // Sync route actions to the history
 const reduxRouterMiddleware = routerMiddleware(hashHistory)
